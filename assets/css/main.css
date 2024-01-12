@@ -10,6 +10,7 @@
   --navCurr: #7D0A0A;
   --underline: #BF3131;
   --txtclr: #111;
+  --meow:"github.png";
 } 
 
 .dark {
@@ -21,6 +22,7 @@
   --navCurr: #5C8374;
   --underline: #5C8374;
   --txtclr: #fdfdfd;
+  --meow:"meow.jpg";
 }
 /* Add a black background color to the top navigation */
 .topnav {
@@ -64,9 +66,11 @@
 }
 header {
   background-color: var(--light);
+  transition: 0.3s ease;
 }
 body {
   background-color: var(--light);
+  transition: 0.3s ease;
 }
 
 .head {
@@ -104,10 +108,10 @@ body {
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 15%;
-  transition: 1s ease;
+  transition: 0.3s ease;
 }
 .home:hover {
-  transition: 1s ease;
+  transition: 0.3s ease;
 }
 
 
@@ -200,6 +204,7 @@ h2{
   display: flex;
   align-items: flex-start;
 }
+
 .lin {
   padding-left: 10px;
   font-size: 130%;
