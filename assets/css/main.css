@@ -1,37 +1,72 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
 
- 
+:root {
+  --dark: #040D12;
+  --light: #ffffff;
+  --black: #000000;
+  --navHov:#EAD196;
+  --navText: black;
+  --navCurr: #7D0A0A;
+  --underline: #BF3131;
+  --txtclr: #111;
+} 
+
+.dark {
+  --light:#040D12;
+  --dark: #ffffff;
+  --black: #ffffff;
+  --navHov:#93B1A6;
+  --navText: #ffffff;
+  --navCurr: #5C8374;
+  --underline: #5C8374;
+  --txtclr: #fdfdfd;
+}
 /* Add a black background color to the top navigation */
 .topnav {
   border-top-left-radius:10px;
-  border-top-right-radius:10px;
-  border-bottom-right-radius:10px;
   border-bottom-left-radius:10px;
   overflow: hidden;
+  width:80%;
+  display:flex;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: #000000;
+  color: var(--black);
   text-align: center;
   padding: 10px 15px;
   text-decoration: none;
   font-size: 18px;
   font-family: "Libre Franklin";
+  transition: 0.5s ease;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: var(--navHov);
   color: black;
+  transition: 0.5s ease;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
+  background-color: var(--navCurr);
+  color: var(--light);
+}
+
+.topnav button{
   background-color: #04AA6D;
-  color: white;
+  margin-left: auto;
+  width:40px;
+  height:40px;
+}
+header {
+  background-color: var(--light);
+}
+body {
+  background-color: var(--light);
 }
 
 .head {
@@ -40,7 +75,7 @@
   position: sticky;
 }
 .head h1{
-  font-family: 'Poppins';
+  font-family: Raleway;
   font-size: 250%;
   margin: 0;
   padding: 0;
@@ -55,7 +90,7 @@ main {
 }
 body {
   font: 400 16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  color: #111;
+  color: var(--txtclr);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -104,7 +139,7 @@ body {
 }
 
 h1 {
-  color: rgb(0, 0, 0);
+  color: var(--black);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -117,13 +152,13 @@ p {
   font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 h2{
-  font-family:'Poppins'; 
+  font-family:'Raleway'; 
 }
 .hehe h2 {
-  color: black;
+  color: var(--black);
   margin: 0;
   font-size: 5vh;
-  background-image: linear-gradient(#d99a5a, #d99a5a);
+  background-image: linear-gradient(var(--underline), var(--underline));
   background-size: 0% 0.1em;
   background-position-y: 100%;
   background-position-x: 0%;
@@ -146,7 +181,7 @@ h2{
 
 .contact h2 {
   font-size: 5vh;
-  background-image: linear-gradient(#d99a5a, #d99a5a);
+  background-image: linear-gradient(var(--underline), var(--underline));
   background-size: 0% 0.1em;
   background-position-y: 100%;
   background-position-x: 0%;
@@ -168,6 +203,10 @@ h2{
 .lin {
   padding-left: 10px;
   font-size: 130%;
+}
+
+.games {
+  opacity: 10%;
 }
 
 

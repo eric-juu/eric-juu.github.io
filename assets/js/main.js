@@ -3,6 +3,20 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+const pp = document.querySelector('.goDark');
+const theme = localStorage.getItem('te');
+
+if (theme) {
+	document.body.classList.add('dark');
+}
+pp.addEventListener('click', () => {
+	document.body.classList.toggle('dark');
+	if (document.body.classList.contains('dark')) {
+		localStorage.setItem('te','dark');
+	} else {
+		localStorage.removeItem('te');
+	}
+});
 
 (function($) {
 
