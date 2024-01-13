@@ -6,15 +6,22 @@
 const pp = document.querySelector('.goDark');
 const theme = localStorage.getItem('te');
 
+const myImg = document.getElementById("b");
+
+
+
 if (theme) {
 	document.body.classList.add('dark');
+	myImg.src = "images/moon.png";
 }
 pp.addEventListener('click', () => {
 	document.body.classList.toggle('dark');
 	if (document.body.classList.contains('dark')) {
 		localStorage.setItem('te','dark');
+		myImg.src = "images/moon.png";
 	} else {
 		localStorage.removeItem('te');
+		myImg.src = "images/sun.webp";
 	}
 });
 

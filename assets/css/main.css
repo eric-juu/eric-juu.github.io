@@ -10,7 +10,7 @@
   --navCurr: #7D0A0A;
   --underline: #BF3131;
   --txtclr: #111;
-  --meow:"github.png";
+  --linkclr: blue;
 } 
 
 .dark {
@@ -22,7 +22,7 @@
   --navCurr: #5C8374;
   --underline: #5C8374;
   --txtclr: #fdfdfd;
-  --meow:"meow.jpg";
+  --link: #F3EDC8;
 }
 /* Add a black background color to the top navigation */
 .topnav {
@@ -31,6 +31,7 @@
   overflow: hidden;
   width:80%;
   display:flex;
+  flex-wrap: wrap;
 }
 
 /* Style the links inside the navigation bar */
@@ -59,10 +60,18 @@
 }
 
 .topnav button{
-  background-color: #04AA6D;
   margin-left: auto;
+  border-radius: 8px;
   width:40px;
   height:40px;
+  border-color: var(--black);
+  display: inline-flex;
+  padding:1px;
+}
+.goDark img{
+  float: left;
+  width:35px;
+  height: auto;
 }
 header {
   background-color: var(--light);
@@ -227,4 +236,7 @@ h2{
   margin: 0;
   padding-left: 10px;
   font-size: 150%;
+}
+.yokota a:link {
+  color: var(--linkclr);
 }
