@@ -7,6 +7,7 @@ const pp = document.querySelector('.goDark');
 const theme = localStorage.getItem('te');
 
 const myImg = document.getElementById("b");
+const gitImg = document.getElementById("gitgitgit");
 
 
 
