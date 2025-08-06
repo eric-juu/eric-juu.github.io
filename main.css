@@ -1,70 +1,298 @@
+
 /* Basic Reset and Body Styling */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #0d0d0d; /* Dark background */
+    overflow-x: hidden; 
+    background-color: #05050a;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #f0f0f0;
 }
 
+/* The Canvas remains fixed in the background */
 #particle-canvas {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    outline: none;
     z-index: 1; 
 }
 
 /* The main content container */
 .content {
     position: relative;
-    z-index: 2; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: #f0f0f0;
-    text-align: center;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem; /* Slightly reduced gap */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+}
+
+/* ===== LEFT COLUMN STYLING (UPDATED) ===== */
+.left-column {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
     
-    /* THE FIX: This forces a new stacking context, ensuring z-index is respected. */
-    transform: translateZ(0);
+    /* ADDED: Opaque card styling */
+    background: rgba(25, 25, 30, 0.8); /* Semi-transparent background */
+    /*
+    backdrop-filter: blur(10px);*/          /* The "frosting" effect */
+    
+    -webkit-backdrop-filter: blur(12px);  /* For Safari browser compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+    border-radius: 16px;
+    padding: 2rem;
 }
 
-.info-card {
-    background: rgba(35, 35, 35, 0.041);
-    backdrop-filter: blur(10px);          /* The "frosting" effect */
-    -webkit-backdrop-filter: blur(10px);  /* For Safari browser compatibility */
-    border-radius: 16px;                  /* Rounded corners */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 2.5rem 3rem;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+/* Inner containers for text alignment */
+.left-column .identity {
+    /* No changes needed */
+}
+.left-column .links {
+    margin-top: 2rem;
 }
 
-.info-card h1 {
-    font-size: 3rem;
-    margin: 0 0 0.5rem 0;
-    letter-spacing: 2px;
+.left-column h1 {
+    font-size: 2.5rem; /* Slightly adjusted for padding */
+    margin: 0;
 }
 
-.info-card p {
-    font-size: 1.1rem;
-    color: #c0c0c0;
-    margin: 0 0 1.5rem 0;
+.left-column h2 {
+    font-size: 1rem;
+    color: #a0a0a0;
+    font-weight: 400;
+    margin: 0.5rem 0 1.5rem 0;
 }
 
-.links a {
-    color: #fff;
+.left-column .intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #a0a0a0;
+}
+
+.left-column .links a {
+    display: block;
+    color: #a0a0a0;
     text-decoration: none;
-    margin: 0 1rem;
+    margin-top: 1rem;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
-.links a:hover {
+.left-column .links a:hover {
+    color: #fff;
+}
+
+/* ADD THESE NEW RULES FOR THE PROFILE PICTURE */
+.profile-picture-container {
+    text-align: center; /* Centers the image */
+    margin-bottom: 1.5rem;
+}
+
+#profile-picture {
+    width: 240px;
+    height: 240px;
+    border-radius: 5%; /* Makes the image a perfect circle */
+    object-fit: cover;   /* Prevents the image from being distorted */
+    border: 2px solid #2f2f2f;
+    cursor: pointer;     /* Changes the cursor to a pointer on hover */
+    transition: transform 0.2s ease-in-out, opacity 0.3s ease; /* Smooth transition */
+}
+
+#profile-picture:hover {
+    transform: scale(1.05); /* Slightly enlarges the picture on hover */
+}
+
+/* style.css */
+
+/* ADD THESE NEW RULES FOR THE TOOLKIT SECTION */
+.toolkit {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toolkit h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #c0c0c0;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows tags to wrap to the next line */
+    gap: 0.5rem;     /* Space between tags */
+}
+
+.skills-list span {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #c0c0c0;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+.left-column .identity {
+    /* This will now grow to fill available space */
+    flex-grow: 1;
+}
+
+.left-column .links {
+    /* No changes needed here */
+}
+
+/* UPDATED: Added .contact-info to share styling with .toolkit */
+.toolkit,
+.contact-info {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toolkit h2,
+.contact-info h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #c0c0c0;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skills-list span {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #c0c0c0;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+
+/* Left column text styles */
+.left-column h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.left-column .identity h2 { /* Targeting the h2 inside identity specifically */
+    font-size: 1rem;
+    color: #a0a0a0;
+    font-weight: 400;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.left-column .intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #a0a0a0;
+}
+/* UPDATED: Added .contact-info a to share link styling */
+.left-column .links a,
+.contact-info a {
+    display: block;
+    color: #a0a0a0;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.left-column .links a:hover,
+.contact-info a:hover {
+    color: #fff;
+}
+
+
+/* ===== RIGHT COLUMN STYLING (UPDATED) ===== */
+.right-column section {
+    margin-bottom: 3rem;
+    
+    /* ADDED: Opaque card styling for each section */
+    background: rgba(25, 25, 30, 0.8); /* Semi-transparent background */
+    /*
+    backdrop-filter: blur(10px);*/          /* The "frosting" effect */
+    
+    -webkit-backdrop-filter: blur(12px);  /* For Safari browser compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.right-column h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.right-column p {
+    color: #a0a0a0;
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+/* Spotify embed styling */
+.right-column iframe {
+    margin-top: 1.5rem;
+    border-radius: 12px; /* Ensure iframe has rounded corners too */
+}
+
+/* Paper item styling (simplified) */
+.paper-item {
+    /* Removed individual card styling */
+    padding-top: 1.5rem;
+    border-top: 1px solid #2f2f2f; /* Use a divider line instead */
+}
+
+.paper-item:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.paper-item h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.paper-item .venue {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin-bottom: 1rem;
+}
+
+.paper-item .paper-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.paper-item .paper-link:hover {
     color: #00aaff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+    }
+    .left-column {
+        position: static;
+        height: auto;
+        margin-bottom: 2rem;
+    }
 }

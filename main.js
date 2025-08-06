@@ -126,3 +126,47 @@ window.addEventListener('resize', () => {
 // --- START THE ANIMATION ---
 init();
 animate();
+
+// --- SPOTIFY PLAYLIST AUTOMATOR ---
+// This script now automatically loads a random playlist from the list below.
+
+const spotifyPlayer = document.getElementById('spotify-player');
+
+// IMPORTANT: You must replace these placeholder URLs with the real "Embed" URLs for your playlists.
+const myPlaylists = [
+    'https://open.spotify.com/embed/playlist/3qdonEAUvLyn94B8tx68JD?utm_source=generator&theme=0',
+    'https://open.spotify.com/embed/playlist/3q4LgADzfMhHol8jmCo2eV?utm_source=generator',
+    'https://open.spotify.com/embed/playlist/2KLs11xdyrGkbwDuCZTgFE?utm_source=generator'
+    // Add more of your playlist embed URLs here
+];
+
+if (spotifyPlayer && myPlaylists.length > 0) {
+    // Pick a random URL from the array
+    const randomIndex = Math.floor(Math.random() * myPlaylists.length);
+    const randomSrc = myPlaylists[randomIndex];
+    
+    // Set the iframe's src to the random playlist
+    spotifyPlayer.src = randomSrc;
+}
+
+
+// --- CLICKABLE PICTURE LOGIC ---
+// Add this new section at the end of your file.
+
+// IMPORTANT: Replace these with the URLs of your actual pictures.
+const myPictures = [
+    'images/jim.jpg', // First picture
+    'images/skull.jpg' // Second picture
+    // You can add more image URLs here!
+];
+
+const profilePicElement = document.getElementById('profile-picture');
+let currentPicIndex = 0;
+
+profilePicElement.addEventListener('click', () => {
+    // Move to the next picture in the array
+    currentPicIndex = (currentPicIndex + 1) % myPictures.length;
+    
+    // Update the image source to the new picture
+    profilePicElement.src = myPictures[currentPicIndex];
+});

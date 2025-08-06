@@ -9,19 +9,63 @@
 <body>
 	<canvas id="particle-canvas"></canvas>
 	
-    <div class="content">
-		<div class="info-card">
-			<h1>Eric Ju 🪤</h1>
-			<p>UC Berkeley Mathematics & Computer Science</p>
-				<div class="links">
-					<a href="#">Projects</a>
-					<a href="https://github.com/eric-juu" target="_blank" rel="noopener noreferrer">GitHub</a>
-					<a href="mailto:eric.juu@berkeley.edu">Contact</a>
+
+
+	<div class="content">
+
+        <div class="left-column">
+				<div class="identity">
+                <h1>Eric Ju 🪤</h1>
+                <h2>UC Berkeley Mathematics + Computer Science 🐻</h2>
+                <p class="intro">
+                    I like doing math, and I happen to be okay at it. I also am interested in Machine Learning and Hardware. 
+                </p>
 				</div>
-		</div>
-        
+
+				<div class="profile-picture-container">
+					<img src="images/skull.jpg" alt="Profile Picture" id="profile-picture">
+
+					<p class="click-indicator">click above to see more</p>
+				</div>
+				<div class="contact-info">
+					<h2>Contact</h2>
+					<a href="mailto:ericju@berkeley.edu">✉️ Email</a>
+					<a href="https://github.com/eric-juu" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+					<a href="https://www.linkedin.com/in/eric-ju-52576a223/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+				</div>
+        </div>
+
+        <div class="right-column">
+            <section id="papers">
+                <h2>Things I've Researched</h2>
+                <div class="paper-item">
+                    <h3>Effective Mordell for Curves via the Structure of the Mordell–Weil Lattice</h3>
+                    <p class="venue">UC Berkeley Math REU</p>
+                    <a href="berkeley_math_reu_report.pdf" class="paper-link">Read Paper &rarr;</a>
+                </div>
+                <div class="paper-item">
+                    <h3>Machine Learning in High Energy Particle Physics</h3>
+                    <p class="venue">Berkeley URAP Program</p>
+                    <a href="https://www.ml4phys.com/students/" class="paper-link">More Info &rarr;</a>
+                </div>
+            </section>
+
+
+            <section id="spotify">
+                <h2>Currently Listening</h2>
+                <p>I like lisetning to music, so here are some of my playlists.</p>
+				
+                <iframe style="border-radius:12px" id="spotify-player" src="" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </section>
+
+            
+
+        </div>
+
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
     <script src="main.js"></script>
 </body>
 </html>
