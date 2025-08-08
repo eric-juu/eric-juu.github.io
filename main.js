@@ -136,7 +136,8 @@ const spotifyPlayer = document.getElementById('spotify-player');
 const myPlaylists = [
     'https://open.spotify.com/embed/playlist/3qdonEAUvLyn94B8tx68JD?utm_source=generator&theme=0',
     'https://open.spotify.com/embed/playlist/3q4LgADzfMhHol8jmCo2eV?utm_source=generator',
-    'https://open.spotify.com/embed/playlist/2KLs11xdyrGkbwDuCZTgFE?utm_source=generator'
+    'https://open.spotify.com/embed/playlist/2KLs11xdyrGkbwDuCZTgFE?utm_source=generator',
+    'https://open.spotify.com/embed/playlist/2ghs7z7G68NExBSuwvxNM4?utm_source=generator'
     // Add more of your playlist embed URLs here
 ];
 
@@ -155,8 +156,14 @@ if (spotifyPlayer && myPlaylists.length > 0) {
 
 // IMPORTANT: Replace these with the URLs of your actual pictures.
 const myPictures = [
-    'images/jim.jpg', // First picture
-    'images/skull.jpg' // Second picture
+    'images/skull.jpg', // Second picture
+    'images/firefly.jpg', 
+    'images/marchseventh.webp',
+    'images/yunli.jpg',
+    'images/bruh.jpg',
+    'images/idk.jpg',
+    'images/bocchi1.jpg',
+    'images/nagisa.webp'
     // You can add more image URLs here!
 ];
 
